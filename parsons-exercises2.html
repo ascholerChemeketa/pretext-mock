@@ -133,8 +133,20 @@
   <script>
     function toggleSearch() {
       let sb = document.getElementById('searchbox');
-      sb.classList.toggle("hidden");
+      sb.classList.toggle("visible");
     }
+
+    var prevWinWidth = window.innerWidth;
+    function resizeTOCHandler() {
+      let curWidth = window.innerWidth;
+      if(prevWinWidth < 1280 && curWidth >= 1280) {
+        let toc = document.getElementById('ptx-sidebar');
+        toc.classList.remove("hidden");
+      }
+    }
+    window.addEventListener("resize", resizeTOCHandler);
+
+
   </script>
 
 
@@ -150,6 +162,7 @@
     href="https://runestone.academy/cdn/runestone/6.5.0/runestone.828206f80e9e88d8.css">
     
   <link href="../pretext_css_core/pretext_add_on.css" rel="stylesheet" type="text/css">
+  <link href="v2.css" rel="stylesheet" type="text/css">
 </head>
 
 <body id="PTXSB" class="pretext book ignore-math">
@@ -320,12 +333,12 @@
         <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()">
       </div>
     </div>
-    <div class="flex-spacer"></div>
     <div class="treebuttons"><a class="previous-button button" href="multiple-choice-exercises.html"
         title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button"
         href="rune.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a
         class="next-button button" href="horizontal-parsons-exercises.html" title="Next"><span
           class="name">Next</span><span class="icon">&gt;</span></a></div>
+          <div class="flex-spacer"></div>
   </nav>
   <div id="latex-macros" class="hidden-content process-math" style="display:none"><span
       class="process-math">\(\newcommand{\identity}{\mathrm{id}}
@@ -350,7 +363,7 @@
       \newcommand{\sfrac}[2]{{#1}/{#2}}
       \)</span></div>
   <div class="ptx-page">
-    <div id="ptx-sidebar" class="hidden">
+    <div id="ptx-sidebar" class="">
       <nav id="ptx-toc" class="depth3 parts">
         <ul class="structural">
           <li>

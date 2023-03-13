@@ -1,0 +1,103 @@
+.pretext #ptx-toc {
+  overflow-y: scroll;
+  height: calc(100vh - 135px);
+  position: sticky;
+  background: white;
+  border: 1px solid #aaa;
+}
+
+
+.pretext #ptx-sidebar {
+  position: sticky;
+  margin: 0;
+  top: 35px;
+  z-index: 10;
+  height: 0;
+}
+
+#ptx-toc {
+  width: 200px;
+}
+
+.pretext #ptx-navbar {
+  position: sticky;
+  top: 0;
+  max-width: unset;
+  margin: 0 auto;
+  border: 0;
+}
+
+#ptx-navbar .toc-toggle {
+  display: block;
+  width: 200px;
+  border-bottom: 1px solid #bababa;
+  border-right: 1px solid #bababa;
+}
+
+@media screen and (min-width: 1279px) {
+  .pretext .ptx-page > .ptx-main {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 943px) {
+  .ptx-content .figure-like {
+      overflow-x:visible;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pretext #ptx-navbar {
+    bottom: 0;
+    position: fixed;
+    top: unset;
+    max-width: unset;
+    margin: 0 auto;
+    border: 0;
+  }
+
+  .pretext #ptx-sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: white;
+}
+
+}
+
+@media screen and (max-width: 1279px) {
+  .pretext #ptx-sidebar {
+    display: none;
+  }
+  .pretext  #ptx-toc {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pretext #ptx-sidebar {
+      display: none;
+      bottom: 70px;
+      position: fixed;
+      /* width: 500px; */
+      top: unset;
+      bottom: calc(100vh);
+  }
+  .pretext  #ptx-toc {
+    width: 100%;
+    height: calc(100vh - 2.3em);
+  }
+  
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .searchbox {
+      display: none;
+  }
+  .searchbox.visible {
+    display: block;
+}
+}
